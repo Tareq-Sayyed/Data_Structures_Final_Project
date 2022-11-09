@@ -64,7 +64,4 @@ public class FirstClassList {
         }
         System.out.println();
     }
-
-
-
 }
