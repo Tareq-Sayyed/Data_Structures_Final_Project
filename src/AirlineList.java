@@ -22,12 +22,9 @@ public class AirlineList {
         Node airline = new Node(Airline);
         if(is_empty()){ first = airline; }
         else{
-            if(first.next == null){ first.next = airline; }
-            else{
-                Node current = first;
-                while(current.next != null){ current = current.next; }
-                current.next = airline;
-            }
+            Node current = first;
+            while(current.next != null){ current = current.next; }
+            current.next = airline;
         }
     }
 
@@ -57,15 +54,15 @@ public class AirlineList {
     public void display_airlines(){
         if (is_empty()){ System.out.println("There are no available airlines currently, please check again later."); }
         else{
+            System.out.println("Available airlines will be listed below: ");
             Node current = first;
-            int index = 0;
-            while (current.next != null){
-                if(index % 5 == 0){ System.out.println(); }
-                else{
-                    System.out.print(index + "- " + current.airline + " ");
-                }
+            int index = 1;
+            while (current != null){
+                System.out.print(index + "- " + current.airline + " ");
+                current = current.next;
                 index++;
             }
         }
+        System.out.println();
     }
 }
