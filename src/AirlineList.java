@@ -27,7 +27,6 @@ public class AirlineList {
             current.next = airline;
         }
     }
-
     // This method removes an airline from the BEGINNING of the list.
     public String delete_from_front(){
         String first_airline = first.airline;
@@ -51,7 +50,18 @@ public class AirlineList {
         return last_airline;
     }
 
+
+    // The Other Method(s).
+    public String find_airline(int pos){
+        Node current = first;
+        for (int i = 0; i < pos; i++) {
+            current = current.next;
+        }
+        if(current != null){ return current.airline; }
+        return ("Airline not found!");
+    }
     public void display_airlines(){
+        System.out.println("---------- AIRLINES LIST ----------");
         if (is_empty()){ System.out.println("There are no available airlines currently, please check again later."); }
         else{
             System.out.println("Available airlines will be listed below: ");
@@ -64,5 +74,6 @@ public class AirlineList {
             }
         }
         System.out.println();
+        System.out.println("---------- END AIRLINES LIST ----------");
     }
 }

@@ -1,5 +1,6 @@
+import java.util.*;
 public class Passenger {
-    private String full_name;
+    private String  full_name;
     private String date_of_birth;
     private char gender;
 
@@ -21,6 +22,7 @@ public class Passenger {
     public void setDate_of_birth(String date_of_birth) { this.date_of_birth = date_of_birth; }
     public void setGender(char gender) { this.gender = gender; }
 
+    // The other method(s)
     public String display_passenger(){
         return ("Full Name: " + getFull_name() + "\nDate-of-Birth: " + getDate_of_birth() + "\nGender: " + getGender());
     }
