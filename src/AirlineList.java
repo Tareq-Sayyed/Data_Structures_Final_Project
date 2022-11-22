@@ -49,6 +49,24 @@ public class AirlineList {
         }
         return last_airline;
     }
+    // This method removes a string at a certain position.
+    public String delete_at_position(int pos){
+        Node current = first;
+        Node previous = first;
+        if(is_empty()){ return ("There are no airlines to remove. Try again later."); }
+        else{
+            for (int i = 0; i < pos - 1; i++) {
+                if(current.next != null) {
+                    previous = current;
+                    current = current.next;
+                }
+                else{ return ("Airline could not be found in our data base"); }
+            }
+        }
+        String airline = current.airline;
+        previous.next = current;
+        return (airline + " has been successfully deleted from our database.");
+    }
 
 
     // The Other Method(s).

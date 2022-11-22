@@ -8,7 +8,7 @@ public class PlanePassengers {
         first = null;
     }
 
-    public String getAirline() {return airline; }
+    public String getAirline() { return airline; }
     public void setAirline(String airline) { this.airline = airline; }
 
     public boolean is_empty(){ return (first == null); }
@@ -66,7 +66,7 @@ public class PlanePassengers {
         return ("Passenger not found!");
     }
     public void display_passengers(){
-        System.out.println("---------- PASSENGERS LIST ----------");
+        System.out.println("---------- " + getAirline() + " PASSENGERS LIST ----------");
         if (is_empty()){ System.out.println("There are no available passengers on this airline."); }
         else{
             System.out.println("All passengers onboard " + getAirline()  + " will be listed below: ");
